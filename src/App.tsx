@@ -1,19 +1,19 @@
-import { Link, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Home from './Home'
-import Gallery from './Gallery'
+import Home from './pages/Home'
+import Gallery from './pages/Gallery'
+import MainLayout from './MainLayout'
 
 function App() {
   return (
-    <div id='app'>
-      <nav>
-        <Link to="/">Home</Link> | <Link to="/gallery">Galeria</Link>
-      </nav>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/gallery" element={<Gallery />} />
+        </Route>
       </Routes>
-    </div>
+    </BrowserRouter>
   )
 }
 
