@@ -1,11 +1,10 @@
-import { Link, Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom"
+import Sidebar from "./components/sidebar/Sidebar"
 
 function MainLayout() {
     return (
-        <>        
-            <nav>
-                <Link to="/">Home</Link> | <Link to="/gallery">Galeria</Link>
-            </nav>
+        <>
+            <Sidebar />
             <div id="main-container">
                 <Outlet />
             </div>
