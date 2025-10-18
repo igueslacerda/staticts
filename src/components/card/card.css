@@ -1,0 +1,17 @@
+.card {
+    background-color: rgb(56, 75, 75);
+    padding: 16px;
+    border-radius: 10px;
+    column-gap: 10px;
+}
+
+.card h3 {
+    margin: 0;
+}
+.card h5 {
+    margin: 0;
+}
+
+.card .card-content {
+    margin-top: 10px;
+}
