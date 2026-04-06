@@ -1,0 +1,23 @@
+.dtable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.dtable-header {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.dtable-row:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.dtable-cell {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
