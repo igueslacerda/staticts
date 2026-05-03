@@ -10,7 +10,8 @@ type CardProps = {
 const Card: React.FC<CardProps> = ({ title, subtitle, children }) => {
     return (
         <div className="card">
-            {(title || subtitle) && <div className="card-header">
+            {(title || subtitle) && 
+            <div className="card-header">
                 {title && <h3 className="card-title">{title}</h3>}
                 {subtitle && <h5 className="card-subtitle">{subtitle}</h5>} 
             </div>}

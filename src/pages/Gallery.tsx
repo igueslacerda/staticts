@@ -1,6 +1,7 @@
 import { useMainContext } from "../MainContext";
 import Card from "../components/card/Card";
 import DTable from "../components/dtable/DTable";
+import Divider from "../components/divider/Divider";
 
 function Gallery() {
     const { ligado, toggleLigado } = useMainContext();
@@ -29,6 +30,7 @@ function Gallery() {
         <Card title="Título do Card" subtitle="Subtítulo do Card">
             Este é o conteúdo do card. Pode ser qualquer coisa, como texto, imagens, ou outros componentes React.
         </Card>
+        <Divider />
         <Card title="Exemplo de DTable" subtitle="Tabela Dinâmica">
             <DTable columns={columns} dataSource={dataSource} />
         </Card>
