@@ -1,69 +1,62 @@
-# React + TypeScript + Vite
+# staticts
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small React + TypeScript + Vite application that demonstrates routing, shared context state, and a basic component gallery layout.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project currently includes:
+- `Home` page with a local counter and a shared context toggle.
+- `Galeria` page showing reusable UI components like cards, a divider, and a dynamic table.
+- A collapsible sidebar with navigation between pages.
+- Shared state via `MainContext` for toggling the app state between `ligado` and `desligado`.
 
-## Expanding the ESLint configuration
+## Project structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- `src/App.tsx` — React Router configuration.
+- `src/MainLayout.tsx` — shared layout that renders the sidebar and page content.
+- `src/MainContext.tsx` — context provider for global app state.
+- `src/pages/Home.tsx` — home page view.
+- `src/pages/Gallery.tsx` — gallery page with component examples.
+- `src/components/` — reusable UI components.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Run locally
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Install dependencies and start the development server using npm:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Or using Yarn:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+yarn install
+yarn dev
 ```
+
+Open the app in the browser at the URL shown by Vite.
+
+## Scripts
+
+Using npm:
+- `npm run dev` — start the Vite development server.
+- `npm run build` — build the app for production.
+- `npm run preview` — preview the production build.
+- `npm run lint` — run ESLint across the project.
+
+Using Yarn:
+- `yarn dev` — start the Vite development server.
+- `yarn build` — build the app for production.
+- `yarn preview` — preview the production build.
+- `yarn lint` — run ESLint across the project.
+
+## Goals
+
+The current app is a starting point for a static component showcase or dashboard.
+
+Future improvements may include:
+- more gallery components and examples,
+- richer styling and responsive layout,
+- data filtering / sorting in the table,
+- a more complete design system or component library preview.
